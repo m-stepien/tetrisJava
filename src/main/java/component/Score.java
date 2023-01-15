@@ -1,3 +1,5 @@
+package component;
+
 public class Score {
     private int userScore;
 
@@ -9,7 +11,7 @@ public class Score {
         return this.userScore;
     }
 
-    public void setUserScore(int score) {
+    private void setUserScore(int score) {
         this.userScore = score;
     }
 
