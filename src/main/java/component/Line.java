@@ -15,7 +15,17 @@ public class Line {
 
     }
 
-    public void setOccupiedPositions(Boolean[] occupiedPositions) {
-        this.occupiedPositions = occupiedPositions;
+    public void setOccupiedPositions(int idx, boolean value)
+    {
+        this.occupiedPositions[idx] = value;
+    }
+    public boolean isFull(){
+        boolean lineIsFull = true;
+        for(boolean position: this.occupiedPositions){
+            if(position == false){
+                lineIsFull = false;
+            }
+        }
+        return lineIsFull;
     }
 }
