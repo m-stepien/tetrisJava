@@ -1,6 +1,9 @@
 package component;
 
 public class Figure {
+    //TODO usunąć z konstruktora tablice
+    //TODO  zamiast tego zmienić figureGenerator na statyczny i uruchamiać go w konstruktorze
+    //TODO potrzebna po tym zmiana testów
     private Boolean[][] positionArray;
     private FigureType name;
 
