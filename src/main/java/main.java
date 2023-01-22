@@ -1,7 +1,7 @@
 import component.Board;
+import component.Clock;
 import component.Figure;
 import component.FigureType;
-import gui.Gui;
 import gui.GuiTerminal;
 
 public class main {
@@ -13,6 +13,8 @@ public class main {
         board.putNewFigureToBoard(figure);
         GuiTerminal gui = new GuiTerminal();
         gui.showBoard(board);
+        Clock clock = new Clock();
+        System.out.println("hi");
 
 
     }

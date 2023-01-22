@@ -22,22 +22,30 @@ public class Board {
         }
 
     }
-    public void setAllToNull(){
+    public void emptyLine(int i){
+        for(int j=0; j<this.width;j++){
+            this.arrayOfBoard[i][j].setOccupied(false);
+        }
+    }
 
+    public boolean checkIfLineFull(int i){
+        boolean full = true;
+        for(int j=0;j<this.width; j++){
+            if(!this.arrayOfBoard[i][j].isOccupied()){
+                full = false;
+                break;
+            }
+        }
+        return full;
     }
     //TODO metody do łatwiejszego dostępu do width i heightg
-    //TODO zdecydowanie zmiana implementacji wywalić line zamienic na Points z atrybutami polozenie x polozenie y
-    //TODO stillMoving ewentualnia isNowFigure
     public void putNewFigureToBoard(Figure newFigure) {
         int leftShiftToCenterFigure = (this.width - newFigure.getPositionArray()[0].length) / 2;
-        for (int j = 0; j < newFigure.getPositionArray()[0].length; j++) {
-            for (int i = 0; i < newFigure.getPositionArray().length; i++) {
+        for (int j = 0; j < newFigure.getWidth(); j++) {
+            for (int i = 0; i < newFigure.getHeight(); i++) {
                 this.arrayOfBoard[i][j+leftShiftToCenterFigure] = new Point(i, j+leftShiftToCenterFigure, true, true);
             }
         }
     }
-    public void moveFigure(int moveX, int moveY){
-        }
-
 
     }

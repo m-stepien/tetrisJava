@@ -46,5 +46,10 @@ public class Figure {
     public boolean isOccupied(int i, int j){
         return this.positionArray[i][j];
     }
-
+    public int getHeight(){
+        return this.positionArray.length;
+    }
+    public int getWidth(){
+        return this.positionArray[0].length;
+    }
 }

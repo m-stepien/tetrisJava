@@ -6,6 +6,7 @@ public class Point {
     private boolean isMovingX;
     private boolean isMovingY;
     private boolean isOccupied;
+    private boolean isNewFigure;
     public Point(int xPosition, int yPosition, boolean isOccupied, boolean isMovingX) {
         this.xPosition = xPosition;
         this.yPosition = yPosition;
@@ -18,6 +19,10 @@ public class Point {
     }
     public void moveX() {
         this.xPosition += 1;
+    }
+
+    public void setOccupied(boolean occupied) {
+        isOccupied = occupied;
     }
 
     public boolean isOccupied() {
