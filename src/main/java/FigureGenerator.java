@@ -30,19 +30,19 @@ public class FigureGenerator {
 
         switch (type) {
             case I: {
-                array[0] = new Boolean[]{false, false, false, false};
-                array[1] = new Boolean[]{true, true, true, true};
+                array[0] = new Boolean[]{true, true, true, true};
+                array[1] = new Boolean[]{false, false, false, false};
                 break;
 
             }
             case J: {
-                array[0] = new Boolean[]{true, false, false, false};
-                array[1] = new Boolean[]{true, true, true, true};
+                array[0] = new Boolean[]{true, true, true, true};
+                array[1] = new Boolean[]{true, false, false, false};
                 break;
             }
             case L: {
-                array[0] = new Boolean[]{false, false, false, true};
-                array[1] = new Boolean[]{true, true, true, true};
+                array[0] = new Boolean[]{true, true, true, true};
+                array[1] = new Boolean[]{false, false, false, true};
                 break;
             }
             case O: {
@@ -51,8 +51,8 @@ public class FigureGenerator {
                 break;
             }
             case T: {
-                array[0] = new Boolean[]{true, true, true, false};
-                array[1] = new Boolean[]{false, true, false, false};
+                array[0] = new Boolean[]{false, true, true, true};
+                array[1] = new Boolean[]{false, false, true, false};
                 break;
             }
             case S: {

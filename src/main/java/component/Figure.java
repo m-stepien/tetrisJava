@@ -43,5 +43,8 @@ public class Figure {
         }
         this.positionArray = newPosition;
     }
+    public boolean isOccupied(int i, int j){
+        return this.positionArray[i][j];
+    }
 
 }

@@ -1,38 +1,43 @@
 package component;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Board {
-    private Line[] arrayOfBoard;
+    private Point[][] arrayOfBoard;
     private int height;
     private int width;
+    private int[][] movingFigurePoint;
 
-    public Line[] getArrayOfBoard() {
+    public Point[][] getArrayOfBoard() {
         return arrayOfBoard;
     }
 
-    public void setArrayOfBoard(Line[] arrayOfBoard) {
-        this.arrayOfBoard = arrayOfBoard;
-    }
 
     public Board(int width, int height) {
-        arrayOfBoard = new Line[height];
-        for (int i = 0; i < arrayOfBoard.length; i++) {
-            arrayOfBoard[i] = new Line(width);
-        }
+        arrayOfBoard = new Point[height][width];
         this.width = width;
         this.height = height;
+        for(int i =0; i<height;i++){
+            for(int j=0; j<width;j++){
+                arrayOfBoard[i][j] = new Point(i,j,false,false);
+            }
+        }
+
+    }
+    public void setAllToNull(){
 
     }
     //TODO metody do łatwiejszego dostępu do width i heightg
+    //TODO zdecydowanie zmiana implementacji wywalić line zamienic na Points z atrybutami polozenie x polozenie y
+    //TODO stillMoving ewentualnia isNowFigure
     public void putNewFigureToBoard(Figure newFigure) {
-        int leftShiftToCenterFigure = (this.width - newFigure.getPositionArray().length) / 2;
+        int leftShiftToCenterFigure = (this.width - newFigure.getPositionArray()[0].length) / 2;
         for (int j = 0; j < newFigure.getPositionArray()[0].length; j++) {
             for (int i = 0; i < newFigure.getPositionArray().length; i++) {
-                this.arrayOfBoard[j].setOccupiedPositions(leftShiftToCenterFigure + i, true);
+                this.arrayOfBoard[i][j+leftShiftToCenterFigure] = new Point(i, j+leftShiftToCenterFigure, true, true);
             }
         }
     }
-}
+    public void moveFigure(int moveX, int moveY){
+        }
+
+
+    }

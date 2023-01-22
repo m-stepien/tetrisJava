@@ -10,6 +10,14 @@ public class Line {
         }
     }
 
+    public Boolean[] getOccupiedPositions() {
+        return occupiedPositions;
+    }
+
+    public void setOccupiedPositions(Boolean[] occupiedPositions) {
+        this.occupiedPositions = occupiedPositions;
+    }
+
     public Boolean isPositionOccupied(int i) {
         return occupiedPositions[i];
 
