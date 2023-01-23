@@ -5,6 +5,7 @@ public class Board {
     private int height;
     private int width;
     private int[][] movingFigurePoint;
+    private Figure newFigure;
 
     public Point[][] getArrayOfBoard() {
         return arrayOfBoard;
@@ -28,10 +29,10 @@ public class Board {
         }
     }
 
-    public boolean checkIfLineFull(int i){
+    public boolean isLineFull(int idx){
         boolean full = true;
-        for(int j=0;j<this.width; j++){
-            if(!this.arrayOfBoard[i][j].isOccupied()){
+        for(int i=0;i<this.width; i++){
+            if(!this.arrayOfBoard[idx][i].isOccupied()){
                 full = false;
                 break;
             }
@@ -47,5 +48,16 @@ public class Board {
             }
         }
     }
-
+    public void moveAbovePointDown(int idx){
+        for(int i=idx-1; i>=0;i--){
+            changeLine(i, i+1);
+        }
     }
+    public void changeLine(int idxToMove, int idxDestination){
+        for(int i = 0; i<width; i++){
+            this.arrayOfBoard[idxDestination][i].setOccupied(true);
+            this.arrayOfBoard[idxToMove][i].setOccupied(false);
+        }
+    }
+    }
+
